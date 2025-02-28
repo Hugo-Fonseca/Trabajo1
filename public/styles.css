@@ -1,0 +1,83 @@
+/*!*******************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/app.scss ***!
+  \*******************************************************************************************************/
+#page {
+  margin: 0px;
+  position: relative;
+}
+#page h2 {
+  color: #790a0a;
+  padding: 10px;
+  font-size: 12px;
+  border: 1px solid #790a0a;
+}
+#page h2:hover {
+  color: #0c0c7a;
+  padding: 24px;
+  font-size: 14px;
+  border: 1px solid #0c0c7a;
+}
+
+.buttonA {
+  background-color: blueviolet;
+}
+
+.cuadrado {
+  width: 150px;
+  height: 150px;
+  background-color: #ff0000;
+}
+.cuadrado.absolute {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+.cuadrado.fixed {
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  background-color: #0000ff;
+}
+.cuadrado.stiky {
+  position: sticky;
+  right: 0px;
+  top: 0px;
+  background-color: #259925;
+}
+
+.listaCuadrados {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.grid {
+  width: 100ww;
+  height: 100vh;
+  display: grid;
+  grid-template-areas: "cua3 cua2" "cua0 cua0" ". cua1";
+}
+.grid #cua-0 {
+  grid-area: cua0;
+  width: 100%;
+  background-color: #ff0000;
+}
+.grid #cua-1 {
+  grid-area: cua1;
+  width: 100%;
+  background-color: #0000ff;
+}
+.grid #cua-2 {
+  grid-area: cua2;
+  width: 100%;
+  background-color: #259925;
+}
+.grid #cua-3 {
+  grid-area: cua3;
+  width: 100%;
+  background-color: chocolate;
+}
