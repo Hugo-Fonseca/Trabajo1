@@ -21,91 +21,70 @@ $sinMargenes: 0px;
     border: 1px solid $color;
 }
 
-#page {
-    margin: $sinMargenes;
-    position: relative;
-    //width: 80%;
-
-  h2 {
-    //color: $red;
-    //font-size: 12px;
-    @include subTitulo($red, 12px, 10px);
-
-    &:hover{
-        //color: $blue;
-        @include subTitulo($blue, 14px, 24px)
-    }
-  }
-
+*{
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
-.buttonA {
-    background-color: blueviolet;
-}
-
-.cuadrado{
-  width: 150px;
-  height: 150px;
-  background-color: #ff0000;
-
-  &.absolute{
-    position: absolute;
-    right: 0px;
-    top: 0px;
-  }
-
-  &.fixed{
-    position: fixed;
-    right: 0px;
-    top: 0px;
-    background-color: #0000ff;
-  }
-
-  &.stiky{
-    position: sticky;
-    right: 0px;
-    top: 0px;
-    background-color: #259925;
-  }
-}
-
-.listaCuadrados{
-  width: 100%;
+.cuerpo {
   display: flex;
-  flex-direction: row;
-  align-items: flex-end;
+  flex-direction: column;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-}
+  align-items: center;
+  max-width: 600px;
 
-.grid{
-  width: 100ww;
-  height: 100vh;
-  display: grid;
-  grid-template-areas: "cua3 cua2"
-  "cua0 cua0"
-  ". cua1";
+  @media (max-width: 768px){
+    width: 90%;
+  }
 
+  h1 {
+    text-align: center;
+    color: #333;
+  }
 
-  #cua-0{
-    grid-area: cua0;
-    width: 100%;
-    background-color: #ff0000;
+  h3 {
+    text-align: center;
+    font-size: 12px;
   }
-  #cua-1{
-    grid-area: cua1;
-    width: 100%;
-    background-color: #0000ff;
+
+  .container > input{
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
   }
-  #cua-2{
-    grid-area: cua2;
-    width: 100%;
-    background-color: #259925;
-  }
-  #cua-3{
-    grid-area: cua3;
-    width: 100%;
-    background-color: chocolate;
+
+  .contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .contact {
+      background: #fff;
+      padding: 15px;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+
+      h1 {
+        margin: 0;
+        font-size: 18px;
+        color: #333;
+      }
+
+      p {
+        margin: 5px 0 0;
+        color: #666;
+        display: none;
+      }
+    }
+
+    .contact.active p {
+      display: block;
+    }
   }
 }

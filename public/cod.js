@@ -16,7 +16,7 @@
   \********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _app_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app.scss */ \"./src/app.scss\");\n\r\n\r\n\r\nconst page = document.getElementById('page');\r\n//Crear un elemento llamado cuadrado\r\nconst cuadrado = (classCss) => {\r\n    const div = document.createElement('div');\r\n    div.classList.add('cuadrado');\r\n    for(let item of classCss){\r\n        div.classList.add(item);\r\n    }\r\n    return div;\r\n};\r\n\r\nconst listaCuadrados = () => {\r\n    const div = document.createElement(\"div\");\r\n    div.classList.add('listaCuadrados');\r\n    for(let i = 0; i <= 15; i++){\r\n        div.appendChild(cuadrado([]));\r\n    }\r\n    return div;\r\n};\r\n\r\nconst grid = ()=>{\r\n    const div = document.createElement('div');\r\n    div.classList.add(\"grid\");\r\n    for (let i = 0; i <= 15; i++) {\r\n        const c = cuadrado([]);\r\n        c.id = \"cua-\"+i;\r\n        div.appendChild(c);\r\n    }\r\n    return div;\r\n};\r\n\r\npage.appendChild(cuadrado(['absolute']));\r\npage.appendChild(cuadrado(['fixed']));\r\npage.appendChild(cuadrado(['stiky']));\r\npage.appendChild(listaCuadrados());\r\npage.appendChild(grid());\n\n//# sourceURL=webpack://web_responsive/./src/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _app_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app.scss */ \"./src/app.scss\");\n\n\n\n\n\n//# sourceURL=webpack://web_responsive/./src/app.js?");
 
 /***/ }),
 

@@ -1,83 +1,63 @@
 /*!*******************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/app.scss ***!
   \*******************************************************************************************************/
-#page {
-  margin: 0px;
-  position: relative;
-}
-#page h2 {
-  color: #790a0a;
-  padding: 10px;
-  font-size: 12px;
-  border: 1px solid #790a0a;
-}
-#page h2:hover {
-  color: #0c0c7a;
-  padding: 24px;
-  font-size: 14px;
-  border: 1px solid #0c0c7a;
+* {
+  font-family: "Courier New", Courier, monospace;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
-.buttonA {
-  background-color: blueviolet;
-}
-
-.cuadrado {
-  width: 150px;
-  height: 150px;
-  background-color: #ff0000;
-}
-.cuadrado.absolute {
-  position: absolute;
-  right: 0px;
-  top: 0px;
-}
-.cuadrado.fixed {
-  position: fixed;
-  right: 0px;
-  top: 0px;
-  background-color: #0000ff;
-}
-.cuadrado.stiky {
-  position: sticky;
-  right: 0px;
-  top: 0px;
-  background-color: #259925;
-}
-
-.listaCuadrados {
-  width: 100%;
+.cuerpo {
   display: flex;
-  flex-direction: row;
-  align-items: flex-end;
+  flex-direction: column;
   justify-content: center;
-  flex-wrap: wrap;
+  align-items: center;
+  max-width: 600px;
+}
+@media (max-width: 768px) {
+  .cuerpo {
+    width: 90%;
+  }
+}
+.cuerpo h1 {
+  text-align: center;
+  color: #333;
+}
+.cuerpo h3 {
+  text-align: center;
+  font-size: 12px;
+}
+.cuerpo .container > input {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+.cuerpo .contact-list {
+  display: flex;
+  flex-direction: column;
   gap: 10px;
 }
-
-.grid {
-  width: 100ww;
-  height: 100vh;
-  display: grid;
-  grid-template-areas: "cua3 cua2" "cua0 cua0" ". cua1";
+.cuerpo .contact-list .contact {
+  background: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
-.grid #cua-0 {
-  grid-area: cua0;
-  width: 100%;
-  background-color: #ff0000;
+.cuerpo .contact-list .contact h1 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
 }
-.grid #cua-1 {
-  grid-area: cua1;
-  width: 100%;
-  background-color: #0000ff;
+.cuerpo .contact-list .contact p {
+  margin: 5px 0 0;
+  color: #666;
+  display: none;
 }
-.grid #cua-2 {
-  grid-area: cua2;
-  width: 100%;
-  background-color: #259925;
-}
-.grid #cua-3 {
-  grid-area: cua3;
-  width: 100%;
-  background-color: chocolate;
+.cuerpo .contact-list .contact.active p {
+  display: block;
 }
