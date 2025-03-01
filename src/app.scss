@@ -1,90 +1,117 @@
 @use 'scss/variables' as *;
-// #page {
-//     margin: 0px;
-// }
-// 
-// #page h2 {
-//     color: #ff0000;
-// }
+// Definir colores y variables reutilizables
+$primary-color: #f9f9f9;
+$border-color: #333;
+$shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
-// #page h2:hover{
-//    color: blue;
-// }
- $red: #790a0a;
- $blue: #0c0c7a;
-$sinMargenes: 0px;
-
-@mixin subTitulo($color, $size, $padd){
-    color: $color;
-    padding: $padd;
-    font-size: $size;
-    border: 1px solid $color;
-}
-
-*{
+* {
   font-family: 'Courier New', Courier, monospace;
   margin: 0;
   padding: 0;
   border: 0;
+  box-sizing: border-box;
 }
 
+body {
+  background-color: #f4f4f4;
+}
+
+// Contenedor principal
 .cuerpo {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 600px;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 10px;
 
-  @media (max-width: 768px){
-    width: 90%;
+  h1, h3 {
+    text-align: center;
   }
 
   h1 {
-    text-align: center;
-    color: #333;
+    color: $border-color;
   }
 
   h3 {
-    text-align: center;
-    font-size: 12px;
+    font-size: 14px;
+    color: darken($border-color, 30%);
   }
 
-  .container > input{
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+  // Estilo del buscador
+  .container {
+    width: 100%;
+    margin-bottom: 10px;
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 2px solid $border-color;
+      box-shadow: $shadow;
+    }
   }
 
+  // Lista de contactos
   .contact-list {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    width: 100%;
 
-    .contact {
-      background: #fff;
-      padding: 15px;
-      border-radius: 5px;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
+    details {
+      width: 100%;
+      background: white;
+      border: 2px solid $border-color; // 🔥 Borde más visible
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: $shadow;
 
-      h1 {
-        margin: 0;
-        font-size: 18px;
-        color: #333;
+      summary {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        background: $primary-color;
+        border-radius: 8px;
+        list-style: none;
+
+        &::after {
+          content: "▼";
+          font-size: 14px;
+          transition: transform 0.3s ease;
+        }
       }
 
-      p {
-        margin: 5px 0 0;
-        color: #666;
-        display: none;
+      &[open] summary::after {
+        transform: rotate(180deg);
+      }
+
+      .contenidoP {
+        padding: 10px;
+        background: lighten($primary-color, 5%);
+        border-top: 2px solid $border-color;
       }
     }
+  }
+}
 
-    .contact.active p {
-      display: block;
-    }
+// Diseño responsive para móviles
+@media (max-width: 480px) {
+  .cuerpo {
+    max-width: 90%;
+  }
+
+  summary {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .container input {
+    padding: 10px;
   }
 }
